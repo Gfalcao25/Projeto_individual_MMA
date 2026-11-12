@@ -19,7 +19,7 @@ body {
   display: flex;
   width: 80%;
   margin: auto;
-  
+
 }
 
 .header {
@@ -35,7 +35,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color:#F5F5F5;
+  color: #F5F5F5;
   margin: 10px;
   font-size: x-large;
 }
@@ -72,7 +72,7 @@ body {
 /* BANNER */
 
 #home1 {
-  width: 1700px;
+  width: 1400px;
   margin: auto;
   border-radius: 30px;
   background-color: #242424;
@@ -86,7 +86,7 @@ body {
   font-size: 30px;
 }
 
-#texto-home1  {
+#texto-home1 {
   font-size: 22px;
   line-height: 1.5;
   color: #F5F5F5;
@@ -111,15 +111,73 @@ body {
   border-color: red;
 }
 
+
 #home2 {
-  width: 1700px;
+  width: 1400px;
   margin: auto;
-  border-radius: 30px;
-  background-color: #242424;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.img-lutadores {
+  width: 300px;
+  height: 400px;
+  margin-top: 10px;
+  border-radius: 25px;
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-home {
+  width: 270px;
+  height: 250px;
+  margin-top: 15px;
+}
+
+.img-home img {
+  width: 270px;
+  height: 250px;
+  border-radius: 25px;
+}
+
+.texto-card-lutadores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.texto-card-lutadores p {
+  color: #bdbdbd;
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+.titulo-lutadores {
+  width: 875px;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  margin-left: 4.1rem;
+  color: white;
+}
+
+.titulo-lutadores h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.titulo-lutadores p {
+  color: #bdbdbd;
+  font-size: 22px;
+}
+
 
 /* MISSÃO VISÃO VALORES */
 
@@ -128,9 +186,9 @@ body {
 /* LOGIN */
 
 .login {
-   height: var(--tamanho-login);
+  height: var(--tamanho-login);
   background-image: linear-gradient(to left, transparent, black),
-  url('../assets/connormcgregor.png');
+    url('../assets/connormcgregor.png');
   background-size: cover;
 }
 
@@ -226,9 +284,9 @@ body {
 
 /*cadastro*/
 .cadastro {
-   height: var(--tamanho-login);
+  height: var(--tamanho-login);
   background-image: linear-gradient(to left, transparent, black),
-  url('../assets/alex-poatan-pereira-fundo.png');
+    url('../assets/alex-poatan-pereira-fundo.png');
   background-size: cover;
 }
 
@@ -311,7 +369,7 @@ body {
 }
 
 .desc-senha {
- margin-top: .3rem;
+  margin-top: .3rem;
 }
 
 .loading-div {
@@ -331,7 +389,7 @@ body {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 
@@ -350,7 +408,7 @@ body {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -406,7 +464,7 @@ input {
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
+  overflow: scroll;
   height: var(--tamanho-simulador);
 }
 
@@ -451,9 +509,23 @@ input {
 
 
 @keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
 }
