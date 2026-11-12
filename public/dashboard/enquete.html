@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTech | Tempo Real</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+        <div class="header-left dash-header">
+
+            <h1><span style="color: white;">FALCON</span> <span style="color: red;">KOMBAT</span></h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <h3>QUALQUER COISA</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Notícias</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="enquete">
+
+                <h1>ENQUETE</h1>
+
+                <h2>Qual é a melhor música de entrada do UFC?</h2>
+
+                <p>Escolha apenas uma opção:</p>
+
+                <div class="opcoes-enquete">
+
+                    <label>
+                        <input type="radio" name="musica" value="0">
+                        Alex Pereira - It's On
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="1">
+                        Conor McGregor - The Foggy Dew
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="2">
+                        Jon Jones - God's Gonna Cut You Down
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="3">
+                        Charles Oliveira - Run This Town
+                    </label>
+
+                </div>
+
+                <div id="resultado_enquete">
+
+                </div>
+
+                <button onclick="votar()">VOTAR</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    let votos = [0, 0, 0, 0];
+
+    function votar() {
+
+        let opcaoSelecionada = document.querySelector('input[name="musica"]:checked');
+
+        if (opcaoSelecionada == null) {
+
+            alert("Selecione uma opção antes de votar!");
+
+        } else {
+
+            votos[Number(opcaoSelecionada.value)]++;
+
+            alert("Você votou em: " + opcaoSelecionada.value);
+
+            mostrarResultado();
+        }
+    }
+
+    function mostrarResultado() {
+
+        let resultado_enquete = document.getElementById("resultado_enquete");
+
+        let total_votos = votos[0] + votos[1] + votos[2] + votos[3];
+
+        if (total_votos == 0) {
+
+            resultado_enquete.innerHTML = "Ainda não existem votos!";
+
+        } else {
+
+            let porcentagemP = ((votos[0] / total_votos) * 100).toFixed(1);
+            let porcentagemC = ((votos[1] / total_votos) * 100).toFixed(1);
+            let porcentagemJ = ((votos[2] / total_votos) * 100).toFixed(1);
+            let porcentagemO = ((votos[3] / total_votos) * 100).toFixed(1);
+
+            resultado_enquete.innerHTML = `
+            <h2>Resultado da votação</h2>
+
+            <p>Alex Pereira: ${votos[0]} votos - ${porcentagemP}%</p>
+
+            <p>Conor McGregor: ${votos[1]} votos - ${porcentagemC}%</p>
+
+            <p>Jon Jones: ${votos[2]} votos - ${porcentagemJ}%</p>
+
+            <p>Charles Oliveira: ${votos[3]} votos - ${porcentagemO}%</p>
+        `;
+        }
+    }
+
+</script>
+
+</html>

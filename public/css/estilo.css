@@ -205,7 +205,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: red;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -248,6 +248,7 @@ body {
 
 .campo {
   display: flex;
+  border-color: red;
   flex-direction: column;
   justify-content: start;
   padding: 5px 0;
@@ -261,7 +262,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ED145B;
+  background-color:red;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -303,7 +304,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: red;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -361,7 +362,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ED145B;
+  background-color: red;
   width: 120px;
   height: 30px;
   align-self: center;
