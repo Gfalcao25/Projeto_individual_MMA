@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTech | Tempo Real</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+        <div class="header-left dash-header">
+
+            <h1><span style="color: white;">FALCON</span> <span style="color: red;">KOMBAT</span></h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./enquete2.html">
+                    <h3>Melhores da história</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Músicas de entrada ao ringue</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./noticias.html">
+                    <h3>Notícias</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="enquete">
+
+                <h1>ENQUETE</h1>
+
+                <h2>Qual é a melhor música de entrada do UFC?</h2>
+
+                <p>Escolha apenas uma opção:</p>
+
+                <div class="opcoes-enquete">
+
+                    <label>
+                        <input type="radio" name="musica" value="16">
+                        Alex Pereira: Itsári - Sepultura
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="17">
+                        Lyoto Machida: Oque É O Que É? - Gonzaguinha
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="18">
+                        Ilia Topuria - canción del mariachi - Antonio Banderas
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="19">
+                        Khabib Nurmagomedov: Dagestan - SABINA
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="20">
+                        Jung Chan-Sung: Zombie - The Cramberries
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="21">
+                        José Aldo: Run This Town - JAY-Z, Rihanna, Kayne West
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="22">
+                        Dustin Poirier: Diamonds - Rihanna
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="23">
+                        Justin Gaethje's: Ain't No Grave - Johnny Cash
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="24">
+                        Paddy Pimblet: Heads Will roll - Yeah Yeah Yeahs
+                    </label>
+
+                    <label>
+                        <input type="radio" name="musica" value="25">
+                        Carlos Prates: Purple lamborghini - Skrillex,Rick Ross
+                    </label>
+
+                </div>
+
+                <div id="resultado_enquete">
+
+                </div>
+
+                <button onclick="votar()">VOTAR</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    
+
+</script>
+
+</html>

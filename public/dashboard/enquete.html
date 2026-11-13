@@ -33,7 +33,13 @@
             </div>
 
             <div class="btn-nav">
-                <h3>QUALQUER COISA</h3>
+                <h3>Maiores da história</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./enquete.html">
+                    <h3>Músicas de entrada ao ringue</h3>
+                </a>
             </div>
 
             <div class="btn-nav-white">
@@ -43,7 +49,7 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
+                <a href="./noticias.html">
                     <h3>Notícias</h3>
                 </a>
             </div>
@@ -59,30 +65,85 @@
 
                 <h1>ENQUETE</h1>
 
-                <h2>Qual é a melhor música de entrada do UFC?</h2>
+                <h2>Quem é o melhor lutador da história do MMA?</h2>
 
                 <p>Escolha apenas uma opção:</p>
 
                 <div class="opcoes-enquete">
 
                     <label>
-                        <input type="radio" name="musica" value="0">
-                        Alex Pereira - It's On
+                        <input type="radio" name="lutador" value="0">
+                        Jon Jones
                     </label>
 
                     <label>
-                        <input type="radio" name="musica" value="1">
-                        Conor McGregor - The Foggy Dew
+                        <input type="radio" name="lutador" value="0">
+                        Georges St-Pierre
                     </label>
 
                     <label>
-                        <input type="radio" name="musica" value="2">
-                        Jon Jones - God's Gonna Cut You Down
+                        <input type="radio" name="lutador" value="0">
+                        Anderson Silva
                     </label>
 
                     <label>
-                        <input type="radio" name="musica" value="3">
-                        Charles Oliveira - Run This Town
+                        <input type="radio" name="lutador" value="0">
+                        Fedor Emelianenko
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Demetrious Johnson
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        José Aldo
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Khabib Nurmagomedov
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Amanda Nunes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Stipe Miocic
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Daniel Cormier
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Randy Couture
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        B.J. Penn
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Kamaru Usman
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Rodrigo Minotauro Nogueira
+                    </label>
+
+                    <label>
+                        <input type="radio" name="lutador" value="0">
+                        Kazushi Sakuraba
                     </label>
 
                 </div>
@@ -99,59 +160,3 @@
     </div>
 
 </body>
-
-<script>
-    let votos = [0, 0, 0, 0];
-
-    function votar() {
-
-        let opcaoSelecionada = document.querySelector('input[name="musica"]:checked');
-
-        if (opcaoSelecionada == null) {
-
-            alert("Selecione uma opção antes de votar!");
-
-        } else {
-
-            votos[Number(opcaoSelecionada.value)]++;
-
-            alert("Você votou em: " + opcaoSelecionada.value);
-
-            mostrarResultado();
-        }
-    }
-
-    function mostrarResultado() {
-
-        let resultado_enquete = document.getElementById("resultado_enquete");
-
-        let total_votos = votos[0] + votos[1] + votos[2] + votos[3];
-
-        if (total_votos == 0) {
-
-            resultado_enquete.innerHTML = "Ainda não existem votos!";
-
-        } else {
-
-            let porcentagemP = ((votos[0] / total_votos) * 100).toFixed(1);
-            let porcentagemC = ((votos[1] / total_votos) * 100).toFixed(1);
-            let porcentagemJ = ((votos[2] / total_votos) * 100).toFixed(1);
-            let porcentagemO = ((votos[3] / total_votos) * 100).toFixed(1);
-
-            resultado_enquete.innerHTML = `
-            <h2>Resultado da votação</h2>
-
-            <p>Alex Pereira: ${votos[0]} votos - ${porcentagemP}%</p>
-
-            <p>Conor McGregor: ${votos[1]} votos - ${porcentagemC}%</p>
-
-            <p>Jon Jones: ${votos[2]} votos - ${porcentagemJ}%</p>
-
-            <p>Charles Oliveira: ${votos[3]} votos - ${porcentagemO}%</p>
-        `;
-        }
-    }
-
-</script>
-
-</html>
