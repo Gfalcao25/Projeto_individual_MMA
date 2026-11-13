@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FALCON KOMBAT | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
 
@@ -40,12 +40,13 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./enquete2.html"></a>
+                <a href="./enquete.html">
                 <h3>Maiores da história</h3>
+                </a>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./enquete.html">
+                <a href="./enquete2.html">
                     <h3>Músicas de entrada ao ringue</h3>
                 </a>
             </div>
@@ -66,18 +67,50 @@
 
         </div>
 
-        <div class="dash">
-            <div id="alerta">
+
+        <div class="dash-right">
+            <div id="container-kpis">
+
+                <div id="kpi1">
+                    <h3>Porcentagem de Votos no lutador tal</h3>
+                    <p>67%</p>
+                </div>
+
+                <div id="kpi2">
+                    <h3>Porcentagem de votos na música tal</h3>
+                    <p>76%</p>
+                </div>
+
+                <div id="kpi3">
+                    <h3>algum dado do quiz</h3>
+                    <p>Jon Jones</p>
+                </div>
+
             </div>
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div id="graficos">
+
+            <div id="area-grafico">
+                <div id="container-esquerdo">
+
+                    <div class="dash-grafico">
+                        <div class="dash-title">
+                            <span>Maior lutador da história:</span>
+                        </div>
+                        <canvas id="votos_maior_historia" style="max-height: 280px;"></canvas>
+                    </div>
+
+
+                    <div class="dash-grafico">
+                        <div class="dash-title">
+                            <span>Melhor música de entrada do ufc</span>
+                        </div>
+                        <canvas id="voto_musica" style="max-height: 280px;"></canvas>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-
 
 </body>
 
@@ -88,9 +121,9 @@
 
     let proximaAtualizacao;
 
-    window.onload = exibirAquariosDoUsuario();
+    // window.onload = exibirAquariosDoUsuario();
 
-    function exibirAquariosDoUsuario() {
+    /*function exibirAquariosDoUsuario() {
         var aquarios = JSON.parse(sessionStorage.AQUARIOS);
         aquarios.forEach(item => {
             document.getElementById("btnAquario").innerHTML += `
@@ -117,9 +150,9 @@
         if (aquarios.length > 0) {
             exibirAquario(aquarios[0].id)
         }
-    }
+    }*/
 
-    function alterarTitulo(idAquario) {
+    /*function alterarTitulo(idAquario) {
         var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
         var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
         tituloAquario.innerHTML = "Últimas medidas do <span style='color: #e6005a'>" + descricao + "</span>"
@@ -208,13 +241,13 @@
         let dados = {
             labels: labels,
             datasets: [
-            {
-                label: 'Temperatura',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }]
+                {
+                    label: 'Temperatura',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(199, 52, 52)',
+                    tension: 0.1
+                }]
         };
 
         console.log('----------------------------------------------')
@@ -243,21 +276,138 @@
         };
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas${idAquario}`),
-            config
+        const votos_maior_historia = new Chart(
+            document.getElementById("votos_maior_historia"),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        "Jon Jones",
+                        "Georges St-Pierre",
+                        "Anderson Silva",
+                        "Fedor Emelianenko",
+                        "Demetrious Johnson",
+                        "José Aldo"
+                    ],
+                    datasets: [{
+                        label: "Votos",
+                        data: [10, 4, 6, 3, 1, 4],
+                        backgroundColor: [
+                            "#c90024",
+                            "#ffffff",
+                            "#777777",
+                            "#8b0000",
+                            "#444444",
+                            "#d93636"
+                        ]
+                    }]
+                }
+            }
         );
 
-        setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+
+
+        const votos_musica = new Chart(
+            document.getElementById("voto_musica"),
+            {
+                type: 'bar',
+                data: {
+                    labels: [
+                        "Itsári",
+                        "O Que É O Que É?",
+                        "Canción del Mariachi",
+                        "Dagestan",
+                        "Zombie",
+                        "Run This Town",
+                        "Diamonds",
+                        "Ain't No Grave",
+                        "Heads Will Roll",
+                        "Purple Lamborghini"
+                    ],
+                    datasets: [{
+                        label: "Votos",
+                        data: [10, 8, 15, 9, 5, 7, 7, 4, 7, 6],
+                        backgroundColor: [
+                            "#c90024",
+                        ]
+                    }]
+                }
+            }
+        );
+    }*/
+
+    function criarGraficos() {
+
+        // Adicionando gráfico criado em div na tela
+        const votos_maior_historia = new Chart(
+            document.getElementById("votos_maior_historia"),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        "Jon Jones",
+                        "Georges St-Pierre",
+                        "Anderson Silva",
+                        "Fedor Emelianenko",
+                        "Demetrious Johnson",
+                        "José Aldo"
+                    ],
+                    datasets: [{
+                        label: "Votos",
+                        data: [10, 4, 6, 3, 1, 4],
+                        backgroundColor: [
+                            "#c90024",
+                            "#ffffff",
+                            "#777777",
+                            "#8b0000",
+                            "#444444",
+                            "#d93636"
+                        ]
+                    }]
+                }
+            }
+        );
+
+
+
+        const votos_musica = new Chart(
+            document.getElementById("voto_musica"),
+            {
+                type: 'bar',
+                data: {
+                    labels: [
+                        "Itsári",
+                        "O Que É O Que É?",
+                        "Canción del Mariachi",
+                        "Dagestan",
+                        "Zombie",
+                        "Run This Town",
+                        "Diamonds",
+                        "Ain't No Grave",
+                        "Heads Will Roll",
+                        "Purple Lamborghini"
+                    ],
+                    datasets: [{
+                        label: "Votos",
+                        data: [10, 8, 15, 9, 5, 7, 7, 4, 7, 6],
+                        backgroundColor: [
+                            "#c90024",
+                        ]
+                    }]
+                }
+            }
+        );
     }
+
+    criarGraficos();
 
 
     // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
+    // buscando a última medida inserida em tabela contendo as capturas,
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados, myChart) {
+    /*function atualizarGrafico(idAquario, dados, myChart) {
 
 
 
@@ -308,5 +458,5 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
-    } 
+    } */
 </script>

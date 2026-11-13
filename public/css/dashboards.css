@@ -412,15 +412,13 @@ canvas {
 }
 
 .dash-right {
-  display: flex;
-  width: 70%;
-  height: fit-content;
-  background-color: #161618;
-  position: relative;
-  top: 0;
-  left: 25%;
-  height: 100vh;
-  overflow: auto;
+   display: block;
+    width: 80%;
+    min-height: 100vh;
+    margin-left: 20%;
+    background-color: #161618;
+    box-sizing: border-box;
+    padding: 30px;
 }
 
 .header-left h1 {
@@ -485,4 +483,81 @@ canvas {
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+#area-grafico {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#container-kpis {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#container-esquerdo {
+    display: flex;
+    margin-top: 6rem;
+    gap: 3rem;
+}
+
+#kpi1 {
+    flex: 1;
+    background-color: rgba(255, 21, 21, 0.636);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+#kpi2 {
+    flex: 1;
+    background-color: #1c1c1c;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+#kpi3 {
+    flex: 1;
+    background-color: rgba(255, 21, 21, 0.636);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.kpi h3 {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.kpi p {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.kpi:hover {
+    transform: translateY(-5px);
+}
+
+.dash-grafico {
+    flex: 1;
+    min-width: 0;
+    background-color: #1c1c1c;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.dash-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
