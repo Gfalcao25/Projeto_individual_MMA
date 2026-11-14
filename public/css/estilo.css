@@ -94,7 +94,9 @@ body {
 }
 
 #img-lutador {
+  width: 45rem;
   height: 30rem;
+
 }
 
 #img-lutador img {
@@ -143,23 +145,24 @@ body {
   height: 250px;
   border-radius: 25px;
 }
-.img-home :hover{
+
+.img-home :hover {
   cursor: pointer;
   transition-timing-function: ease-in-out;
   transform: scale(0.95);
 }
 
 
-.texto-card-lutadores{
+.texto-card-lutadores {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   font-weight: bold;
-  margin:auto;
+  margin: auto;
   text-align: center;
 }
-  
+
 
 
 .texto-card-lutadores p {
@@ -187,11 +190,73 @@ body {
   font-size: 22px;
 }
 
+#area-historia {
+  width: 1400px;
+  margin: auto;
+  margin-top: 4rem;
+  background-color: #242424;
+  border-radius: 25px;
+  color: white;
+  padding: auto;
+}
+
+#area-texto-historia {
+  width: 1250px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.texto-historia {
+  color: white;
+  margin-left: 30px;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#ultimo-paragrafo {
+  margin-bottom: 2rem;
+}
+
+#area-pessoal {
+  width: 1400px;
+  border-radius: 25px;
+  border: 3px solid red;
+  margin: auto;
+  margin-top: 6rem;
+  color: white;
+}
+
+#area-texto-pessoal {
+  width: 1195px;
+  margin: auto;
+  padding: 50px;
+}
+
+#texto-pessoal {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+#foto-karate {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 400px;
+}
+
+
 
 /* MISSÃO VISÃO VALORES */
 
 /* FOOTER */
-
+.footer{
+  margin-top: 4rem;
+  width: 100%;
+  color: whitesmoke;
+  background-color: #242424;
+}
 /* LOGIN */
 
 .login {
@@ -271,7 +336,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color:red;
+  background-color: red;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -464,18 +529,6 @@ input {
 .loading-div img {
   height: 50px;
   width: 50px;
-}
-
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll;
-  height: var(--tamanho-simulador);
 }
 
 /* ALERTA */
