@@ -169,6 +169,45 @@ body {
   cursor: pointer;
 }
 
+/*pagina musicas*/
+
+.area-dash {
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 20%;
+    background-color: #161618;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.area-iframe {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.area-fundo-iframe {
+  width: 700px;
+  padding: 20px;
+  border-radius: 25px;
+  margin-top: 2rem;
+  height: auto;
+  background-color: rgb(48, 45, 45)
+}
+
+.card-iframe {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+}
+
+.texto-musica{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
 /* pagina graficos */
 
 .dash-header {
