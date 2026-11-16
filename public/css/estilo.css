@@ -106,9 +106,12 @@ body {
 }
 
 #botao-home {
+  width:150px;
   height: 60px;
   background-color: red;
   color: #F5F5F5;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
   border-color: red;
 }
@@ -134,6 +137,8 @@ body {
   align-items: center;
 }
 
+
+
 .img-home {
   width: 270px;
   height: 250px;
@@ -142,7 +147,7 @@ body {
 
 .img-home img {
   width: 270px;
-  height: 250px;
+  height: 280px;
   border-radius: 25px;
 }
 
@@ -160,6 +165,7 @@ body {
   color: white;
   font-weight: bold;
   margin: auto;
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -169,7 +175,7 @@ body {
   color: #bdbdbd;
   font-size: 15px;
   font-weight: normal;
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 .titulo-lutadores {
@@ -207,6 +213,34 @@ body {
   margin: auto;
 }
 
+.area-foto-pessoal{
+  display: flex;
+  flex-direction:row;
+  border-radius: 25px;
+  width: 1200px;
+  height: 600px;
+  background-color: #242424;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.foto-judo {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 300px;
+  height: 500px;
+  border-radius: 25px;
+}
+
+#foto-byst{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 800px;
+  height: 520px;
+  border-radius: 25px;
+}
+
 .texto-historia {
   color: white;
   margin-left: 30px;
@@ -220,6 +254,7 @@ body {
 
 #area-pessoal {
   width: 1400px;
+  height: auto;
   border-radius: 25px;
   border: 3px solid red;
   margin: auto;
