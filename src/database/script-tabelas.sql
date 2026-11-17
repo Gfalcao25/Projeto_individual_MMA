@@ -6,53 +6,103 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+create database falcon_kombat_teste;
 
-USE aquatech;
+use falcon_kombat_teste;
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+create table usuario (
+id_usuario int primary key auto_increment,
+nome varchar(100) not null,
+apelido varchar(50) not null,
+email varchar(100) not null unique,
+senha varchar(255) not null,
+data_cadastro datetime default current_timestamp
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table enquete (
+id_enquete int primary key auto_increment,
+pergunta varchar(250) not null
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+
+create table opcao_enquete (
+id_opcao int primary key auto_increment,
+descricao varchar(250) not null,
+fk_enquete int not null,
+constraint ckfk_opcao_enquete
+foreign key (fk_enquete) references enquete(id_enquete)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table voto (
+id_voto int primary key auto_increment,
+fk_usuario int not null,
+fk_op_enquete int not null,
+constraint ckfk_usuario_voto 
+foreign key (fk_usuario) references usuario(id_usuario),
+constraint ckfk_op_enquete_voto 
+foreign key (fk_op_enquete) references opcao_enquete(id_opcao)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+insert into enquete (pergunta)
+values ('Quem é o maior lutador da história do MMA?');
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+insert into opcao_enquete (descricao, fk_enquete)
+values
+('Jon Jones', 1),
+('Georges St-Pierre', 1),
+('Anderson Silva', 1),
+('Fedor Emelianenko', 1),
+('Demetrious Johnson', 1),
+('José Aldo', 1),
+('Khabib Nurmagomedov', 1),
+('Amanda Nunes', 1),
+('Stipe Miocic', 1),
+('Daniel Cormier', 1),
+('Randy Couture', 1),
+('B.J. Penn', 1),
+('Kamaru Usman', 1),
+('Rodrigo Minotauro Nogueira', 1),
+('Kazushi Sakuraba', 1);
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+
+insert into usuario (nome, apelido, email, senha)
+values
+('Gabriel Falcão', 'falcão', 'gabriel@email.com', 'Falcon@123'),
+('Pedro Miyadaira', 'Phfal', 'carlos@email.com', 'Pedro#456'),
+('Lucas Santos', 'lucas_mma', 'lucas@email.com', 'Lucas!789');
+
+insert into voto (fk_usuario, fk_op_enquete)
+values
+(1, 1),
+(2, 3),
+(3, 5),
+(1, 3),
+(2, 1),
+(1, 1),
+(3, 7),
+(2, 3);
+
+select
+o.descricao,
+count(v.id_voto) as total_votos
+from opcao_enquete as o
+left join voto as v
+on o.id_opcao = v.fk_op_enquete
+group by o.id_opcao, o.descricao
+order by total_votos desc;
+
+insert into enquete (pergunta)
+values ('Qual é a melhor música de entrada do UFC?');
+
+insert into opcao_enquete (descricao, fk_enquete)
+values
+('Alex Pereira', 2),
+('Lyoto Machida', 2),
+('Ilia Topuria', 2),
+('Khabib Nurmagomedov', 2),
+('Jung Chan-Sung', 2),
+('José Aldo', 2),
+('Dustin Poirier', 2),
+('Justin Gaethje', 2),
+('Paddy Pimblett', 2),
+('Carlos Prates', 2);
