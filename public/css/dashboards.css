@@ -172,41 +172,68 @@ body {
 /*pagina musicas*/
 
 .area-dash {
-    width: 100%;
-    min-height: 100vh;
-    margin-left: 20%;
-    background-color: #161618;
-    box-sizing: border-box;
-    padding: 30px;
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 20%;
+  background-color: #161618;
+  box-sizing: border-box;
+  padding: 30px;
 }
 
 .area-iframe {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .area-fundo-iframe {
-  width: 700px;
+  width: 1000px;
   padding: 20px;
   border-radius: 25px;
   margin-top: 2rem;
+  margin-left: 4rem;
+  ;
   height: auto;
   background-color: rgb(48, 45, 45)
 }
 
 .card-iframe {
-    display: flex;
-    justify-content: start;
-    margin: 0;
+  width: 420px;
+  display: flex;
+  justify-content: start;
+  margin: 0;
 }
 
-.texto-musica{
+.texto-musica {
   display: flex;
+  justify-content: center;
   align-items: center;
   color: white;
+  margin-left: 2rem;
 }
+
+.area-img-musica {
+  width: 400px;
+  height: 320px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-lutador-musica {
+  width: 430px;
+  display: flex;
+
+}
+
+.card-lutador-musica2 {
+  width: 430px;
+  display: flex;
+}
+
 
 /* pagina graficos */
 
@@ -451,13 +478,13 @@ canvas {
 }
 
 .dash-right {
-   display: block;
-    width: 80%;
-    min-height: 100vh;
-    margin-left: 20%;
-    background-color: #161618;
-    box-sizing: border-box;
-    padding: 30px;
+  display: block;
+  width: 80%;
+  min-height: 100vh;
+  margin-left: 20%;
+  background-color: #161618;
+  box-sizing: border-box;
+  padding: 30px;
 }
 
 .header-left h1 {
@@ -525,78 +552,78 @@ canvas {
 }
 
 #area-grafico {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 #container-kpis {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 #container-esquerdo {
-    display: flex;
-    margin-top: 6rem;
-    gap: 3rem;
+  display: flex;
+  margin-top: 6rem;
+  gap: 3rem;
 }
 
 #kpi1 {
-    flex: 1;
-    background-color: rgba(255, 21, 21, 0.636);
-    padding: 25px;
-    border-radius: 10px;
-    color: white;
-    transition: 0.3s;
+  flex: 1;
+  background-color: rgba(255, 21, 21, 0.636);
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s;
 }
 
 #kpi2 {
-    flex: 1;
-    background-color: #1c1c1c;
-    padding: 25px;
-    border-radius: 10px;
-    color: white;
-    transition: 0.3s;
+  flex: 1;
+  background-color: #1c1c1c;
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s;
 }
 
 #kpi3 {
-    flex: 1;
-    background-color: rgba(255, 21, 21, 0.636);
-    padding: 25px;
-    border-radius: 10px;
-    color: white;
-    transition: 0.3s;
+  flex: 1;
+  background-color: rgba(255, 21, 21, 0.636);
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.3s;
 }
 
 .kpi h3 {
-    color: #aaaaaa;
-    font-size: 14px;
-    margin-bottom: 15px;
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .kpi p {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .kpi:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .dash-grafico {
-    flex: 1;
-    min-width: 0;
-    background-color: #1c1c1c;
-    padding: 25px;
-    border-radius: 10px;
+  flex: 1;
+  min-width: 0;
+  background-color: #1c1c1c;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .dash-title {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
