@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/logoicon (2).png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FALCON KOMBAT | MÚSICAS</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+        <div class="header-left dash-header">
+
+            <h1><span style="color: white;">FALCON</span> <span style="color: red;">KOMBAT</span></h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./enquete.html">
+                    <h3>Enquete lutadores</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./enquete2.html">
+                    <h3>Enquete músicas</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Lutadores</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="musicas.html"><h3>Músicas</h3></a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./noticias.html">
+                    <h3>Notícias</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="area-dash">
+
+            <h1 style="color: white;">MAIORES LUTADORES DA HISTÓRIA</h1>
+
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img-jon">
+                    <img id="img-jon" src="../assets/imgs/JONES_JON_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>JON JONES</h2>
+
+                    <span>Considerado por muitos um dos maiores lutadores da história do MMA, Jon Jones construiu uma
+                        carreira marcada pelo domínio e pela versatilidade. Ex-campeão dos meio-pesados e dos pesados do
+                        UFC, ficou conhecido por seu alcance impressionante, criatividade nos golpes e excelente
+                        wrestling. Sua capacidade de controlar adversários de diferentes estilos fez dele um dos nomes
+                        mais importantes do esporte.</span>
+                </div>
+            </div>
+
+
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+                    <img class="card-lutador-musica" src="../assets/imgs/SILVA_ANDERSON_L (1).png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Anderson "Spider" Silva</h2>
+
+                    <span>
+                        Anderson Silva é um dos maiores representantes brasileiros na história do MMA. Conhecido como
+                        Spider, marcou época no UFC com seu estilo técnico, movimentos imprevisíveis e precisão nos
+                        golpes. Foi campeão dos pesos-médios e protagonizou uma das maiores sequências de domínio da
+                        organização, com dez defesas consecutivas de cinturão.
+                    </span>
+                </div>
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/Georges-St-Pierre_318_LeftFullBodyImage.png"
+                        alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>George St Pierre </h2>
+
+                    <span>Georges St-Pierre, conhecido como GSP, é considerado um dos lutadores mais completos da
+                        história do MMA. O canadense foi campeão dos meio-médios e dos médios do UFC, destacando-se pelo
+                        wrestling, inteligência estratégica e excelente preparo físico. Sua capacidade de adaptar o jogo
+                        de acordo com cada adversário foi uma das grandes marcas de sua carreira.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/EMELIANENKO_FEDOR_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Fedor Emilianenko </h2>
+
+                    <span>Fedor Emelianenko é uma verdadeira lenda do MMA, especialmente por seu domínio na categoria
+                        dos pesos-pesados durante sua passagem pelo PRIDE. O russo ficou conhecido por sua força,
+                        resistência, velocidade e habilidade tanto na luta em pé quanto no chão. Durante anos, foi
+                        considerado por muitos o melhor peso-pesado do mundo.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+                    <img class="card-lutador-musica" src="../assets/imgs/JOHNSON_DEMETRIOUS_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Demetrious </h2>
+
+                    <span>Conhecido como Mighty Mouse, Demetrious Johnson é reconhecido por sua velocidade, técnica e
+                        versatilidade dentro do octógono. Foi campeão dos pesos-moscas do UFC e estabeleceu um recorde
+                        de 11 defesas consecutivas de cinturão. Sua capacidade de combinar wrestling, jiu-jitsu e
+                        trocação fez dele um dos atletas mais técnicos da história do MMA.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/ALDO_JOSE_L_05-10.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>José Aldo </h2>
+
+                    <span>José Aldo é um dos maiores nomes do MMA brasileiro. Conhecido por seus poderosos chutes
+                        baixos, velocidade e excelente defesa de quedas, dominou a categoria dos pesos-penas durante 6
+                        anos. Foi campeão do WEC e do UFC, construindo um legado marcado pela consistência e por grandes
+                        apresentações contra alguns dos melhores lutadores do mundo.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/1NURMAGOMEDOV_KHABIB_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Khabib Nurmagumedov </h2>
+                    <span>Khabib Nurmagomedov ficou conhecido por seu domínio absoluto no wrestling e no grappling. O
+                        russo encerrou sua carreira invicto, com 29 vitórias e nenhuma derrota, conquistando o cinturão
+                        dos pesos-leves do UFC. Sua capacidade de pressionar, derrubar e controlar os adversários no
+                        chão fez dele um dos lutadores mais dominantes de todos os tempos.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/NUNES_AMANDA_R.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Amanda Nunes </h2>
+                    <span>Amanda Nunes, conhecida como Leoa, é considerada uma das maiores lutadoras da história do MMA
+                        feminino. A brasileira conquistou os cinturões dos pesos-galos e dos penas do UFC, tornando-se
+                        campeã de duas categorias simultaneamente. Com uma combinação de potência, técnica e
+                        agressividade, venceu grandes nomes do esporte e deixou um legado histórico.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/MAKHACHEV_ISLAM_L_BELT_01-18.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Islam Makhachev </h2>
+
+                    <span>Islam Makhachev é um dos grandes representantes da escola de luta do Daguestão com 29 vitórias
+                        e apenas 1 derrota rm sua carreira. Conhecido por
+                        seu wrestling, controle no chão e evolução na trocação, conquistou o cinturão dos pesos-leves e
+                        do peso-meio-médio do
+                        UFC e se destacou pela capacidade de neutralizar diferentes estilos de luta. Sua disciplina e
+                        inteligência tática são características fundamentais de seu sucesso.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/CORMIER_DANIEL_L_08-15.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Daniel Cormier </h2>
+                    <span>Daniel Cormier é um dos poucos atletas que conseguiram conquistar cinturões em duas categorias
+                        do UFC: meio-pesado e pesado. Com uma carreira marcada pelo wrestling de alto nível, força
+                        física e inteligência dentro do octógono, enfrentou alguns dos maiores nomes da história do
+                        esporte. Além de lutador, também se tornou uma importante personalidade do MMA como
+                        comentarista.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/RANDY_COUTURE.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Randy Couture</h2>
+                    <span>
+                        Randy Couture foi um dos pioneiros do MMA moderno e uma figura fundamental na história do UFC. O
+                        americano conquistou títulos nas categorias dos meio-pesados e pesados, destacando-se pelo
+                        wrestling, resistência e experiência. Sua carreira mostrou que estratégia, disciplina e
+                        conhecimento técnico podem ser tão importantes quanto a força física.
+                    </span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/SHEVCHENKO_VALENTINA_L_BELT_11-15.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Valentina Shevchenko</h2>
+
+                    <span>Valentina Shevchenko é uma das maiores referências do MMA feminino. Ex-campeã dos pesos-moscas
+                        do UFC, a atleta do Quirguistão é conhecida por sua precisão na trocação, domínio do muay thai e
+                        excelente capacidade defensiva. Sua técnica e inteligência tática fizeram dela uma das lutadoras
+                        mais respeitadas de sua geração.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/MIOCIC_STIPE_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Stipe Miocic</h2>
+                    <span>Stipe Miocic é considerado um dos maiores pesos-pesados da história do UFC. O americano de
+                        origem croata conquistou o cinturão da categoria e estabeleceu o recorde de três defesas
+                        consecutivas em sua primeira passagem como campeão. Seu estilo combina boxe eficiente, wrestling
+                        e resistência, características que o tornaram um adversário extremamente difícil.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/USMAN_KAMARU_L_06-14.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Kamaru Usman</h2>
+
+                    <span>Conhecido como Nigerian Nightmare, Kamaru Usman conquistou o cinturão dos meio-médios do UFC e
+                        se tornou um dos campeões mais dominantes da categoria. Seu wrestling, força física e pressão
+                        constante foram fundamentais para sua sequência de vitórias e defesas de título. Também
+                        desenvolveu uma trocação poderosa, tornando-se um lutador bastante completo.</span>
+                </div>
+
+
+            </div>
+
+            <div class="area-fundo-lutadores">
+                <div class="area-img">
+
+                    <img class="card-lutador-musica" src="../assets/imgs/PEREIRA_ALEX_L.png" alt="">
+                </div>
+                <div class="area-texto-lutadores">
+                    <h2>Alex "Poatan" Pereira</h2>
+
+                    <span>
+                        Alex Pereira, conhecido como Poatan, é um dos maiores destaques brasileiros da atualidade no
+                        MMA. Com uma trajetória de sucesso no kickboxing, chegou ao UFC e conquistou os cinturões dos
+                        pesos-médios e meio-pesados. Sua potência nos golpes, precisão e experiência na luta em pé
+                        fizeram dele um dos atletas mais temidos do esporte.
+                    </span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+</body>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.APELIDO_USUARIO;
+</script>
