@@ -48,6 +48,12 @@
             <div class="card card-login">
                 <h2>Olá de volta!</h2>
                 <div class="formulario">
+
+                    <div class="campo">
+                        <span>Apelido:</span>
+                        <input id="apelido_input" type="text" placeholder="Login">
+                    </div>
+
                     <div class="campo">
                         <span>E-mail:</span>
                         <input id="email_input" type="text" placeholder="Login">
@@ -80,7 +86,7 @@
 
     function entrar() {
         aguardar();
-
+        var apelidoVar = apelido_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
@@ -93,7 +99,7 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
-
+        console.log("FORM LOGIN: ", apelidoVar);
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -103,6 +109,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                apelidoServer: apelidoVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -117,6 +124,7 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.APELIDO_USUARIO = json.apelido;
 
                     setTimeout(function () {
                         window.location = "./dashboard/dashboard.html";
