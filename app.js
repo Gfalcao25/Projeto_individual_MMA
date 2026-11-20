@@ -17,10 +17,9 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
-var medidasRouter = require("./src/routes/medidas");
-var aquariosRouter = require("./src/routes/aquarios");
-var empresasRouter = require("./src/routes/empresas");
+var enqueteRouter = require("./src/routes/enquete");
+var opcaoEnqueteRouter = require("./src/routes/opcaoEnquete");
+var votoRouter = require("./src/routes/voto");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,10 +29,9 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
-app.use("/medidas", medidasRouter);
-app.use("/aquarios", aquariosRouter);
-app.use("/empresas", empresasRouter);
+app.use("/enquete", enqueteRouter);
+app.use("/opcaoEnquete", opcaoEnqueteRouter);
+app.use("/voto", votoRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`
