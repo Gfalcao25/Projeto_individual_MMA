@@ -1,5 +1,5 @@
 // sessão
-/*function validarSessao() {
+function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var apelido = sessionStorage.APELIDO_USUARIO;
 
@@ -10,7 +10,7 @@
     } else {
         window.location = "../login.html";
     }
-}*/
+}
 function validarSessao() {
     var apelido = sessionStorage.APELIDO_USUARIO;
 
