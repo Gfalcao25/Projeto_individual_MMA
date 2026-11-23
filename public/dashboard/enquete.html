@@ -47,7 +47,7 @@
                 <h3>Lutadores</h3>
             </div>
 
-             <div class="btn-nav-white">
+            <div class="btn-nav-white">
                 <a href="musicas.html">
                     <h3>Músicas</h3>
                 </a>
@@ -84,77 +84,77 @@
 
                     <label>
                         <img src="" alt="">
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="1">
                         Jon Jones
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="2">
                         Georges St-Pierre
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="3">
                         Anderson Silva
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="4">
                         Fedor Emelianenko
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="5">
                         Demetrious Johnson
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="6">
                         José Aldo
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="7">
                         Khabib Nurmagomedov
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="8">
                         Amanda Nunes
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
-                       Islam Makhachev
+                        <input type="radio" name="lutador" value="9">
+                        Islam Makhachev
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="10">
                         Daniel Cormier
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="11">
                         Randy Couture
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="12">
                         Valentina Shevchenko
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="13">
                         Stipe Miocic
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="14">
                         Kamaru Usman
                     </label>
 
                     <label>
-                        <input type="radio" name="lutador" value="0">
+                        <input type="radio" name="lutador" value="15">
                         Alex "Poatan" Pereira
                     </label>
 
@@ -164,7 +164,8 @@
 
                 </div>
 
-                <button onclick="votar()">VOTAR</button>
+                <button onclick="votar()">VOTAR</button><br>
+                <div id="msg"></div>
 
             </div>
         </div>
@@ -174,5 +175,47 @@
 </body>
 <script>
     b_usuario.innerHTML = sessionStorage.APELIDO_USUARIO;
-</script>
 
+    function votar() {
+        let opcoes = document.getElementsByName("lutador")
+        let id_opcao = null
+
+        for (let i = 0; i < opcoes.length; i++) {
+            if (opcoes[i].checked) {
+                id_opcao = opcoes[i].value;
+            }
+        }
+
+        if (id_opcao == null) {
+            alert("Selecione um lutador antes de votar!");
+            return;
+        } else {
+            let id_usuario = sessionStorage.ID_USUARIO
+
+            fetch("/voto/votar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id_usuario: id_usuario,
+                    id_opcao: id_opcao
+                })
+            })
+                .then(function (resposta) {
+                    console.log(resposta);
+                    if (resposta.ok) {
+                        console.log("Voto registrado!");
+                        msg.innerHTML = 'voto registrado com sucesso!'
+                    } else {
+                        console.log("Erro ao registrar voto!");
+                    }
+                })
+                .catch(function (erro) {
+                    console.log("Erro na requisição:", erro);
+                });
+
+                
+        }
+    }
+</script>
