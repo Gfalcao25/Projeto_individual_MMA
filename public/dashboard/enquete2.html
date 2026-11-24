@@ -44,7 +44,8 @@
 
             <div class="btn-nav-white">
                 <a href="lutadores.html">
-                <h3>Lutadores</h3></a>
+                    <h3>Lutadores</h3>
+                </a>
             </div>
 
             <div class="btn-nav-white">
@@ -138,7 +139,8 @@
 
                 </div>
 
-                <button onclick="votar()">VOTAR</button>
+                <button onclick="votar()">VOTAR</button> <br><br>
+                <div id="msg"></div>
 
             </div>
         </div>
@@ -148,11 +150,54 @@
 </body>
 
 <script>
-    
 
+
+</script>
+
+
+<script>
+    b_usuario.innerHTML = sessionStorage.APELIDO_USUARIO;
+
+    function votar() {
+        let opcoes = document.getElementsByName("musica")
+        let id_opcao = null
+
+        for (let i = 0; i < opcoes.length; i++) {
+            if (opcoes[i].checked) {
+                id_opcao = opcoes[i].value;
+            }
+        }
+
+        if (id_opcao == null) {
+            alert("Selecione uma música antes de votar!");
+            return;
+        } else {
+            let id_usuario = sessionStorage.ID_USUARIO
+
+            fetch("/voto/votar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id_usuario: id_usuario,
+                    id_opcao: id_opcao
+                })
+            })
+                .then(function (resposta) {
+                    console.log(resposta);
+                    if (resposta.ok) {
+                        console.log("Voto registrado!");
+                        msg.innerHTML = 'voto registrado com sucesso!'
+                    } else {
+                        console.log("Erro ao registrar voto!");
+                    }
+                })
+                .catch(function (erro) {
+                    console.log("Erro na requisição:", erro);
+                });
+        }
+    }
 </script>
 
 </html>
-<script>
-    b_usuario.innerHTML = sessionStorage.APELIDO_USUARIO;
-</script>
