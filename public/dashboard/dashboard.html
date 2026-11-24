@@ -29,7 +29,7 @@
 
 
 
-<body onload="obtervotoslutadores()">
+<body onload="obtervotos()">
 
     <div class="janela">
         <div class="header-left">
@@ -91,8 +91,8 @@
                 </div>
 
                 <div id="kpi2">
-                    <h3>Porcentagem de votos na música tal</h3>
-                    <p>76%</p>
+                    <h3 id="mais_votada"></h3>
+                    <p id="percentual_musica"></p>
                 </div>
 
                 <div id="kpi3">
@@ -216,9 +216,9 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
+    //function plotarGrafico(resposta, idAquario) {
 
-        console.log('iniciando plotagem do gráfico...');
+        //console.log('iniciando plotagem do gráfico...');
 
         /*// Criando estrutura para plotar gráfico - labels
        let labels = [];
@@ -255,7 +255,7 @@
        console.log(dados.datasets)
        console.log('----------------------------------------------') */
 
-    }
+    //}
 
     let votosLutadores = {
         lutadores: [],
@@ -278,7 +278,7 @@
     }
 
 
-    function obtervotoslutadores() {
+    function obtervotos() {
 
         fetch("/enquete/votos/1")
             .then(function (resposta) {
@@ -297,6 +297,8 @@
             .catch(function (erro) {
                 console.log("Erro ao buscar votos:", erro);
             });
+
+
 
         fetch("/enquete/votos/2")
             .then(function (resposta) {
@@ -320,9 +322,12 @@
 
 
 
+
     // Criando estrutura para plotar gráfico - config
 
     function criarGraficos() {
+
+
         // kpi 3
         let totalVotos = 0;
         for (let i = 0; i < votosLutadores.votos.length; i++) {
@@ -351,6 +356,23 @@
 
         mais_votado.innerHTML = `${maisVotado}`
         percent_lutador.innerHTML = `${percent_votos.toFixed(1)}% dos votos`
+
+        // kpi 2
+        let maiorVoto_musica = 0;
+        let maisVotada = "";
+        let total_votos_musica = 0;
+
+        for (let i = 0; i < votosMusicas.votos.length; i++) {
+            if(votosMusicas.votos[i] > maiorVoto_musica){
+                maiorVoto_musica = votosMusicas.votos[i]
+                maisVotada = votosMusicas.musicas[i]
+            }
+            total_votos_musica += votosMusicas.votos[i]
+        }
+        let percent_musica = (maiorVoto_musica / total_votos_musica) * 100;
+
+        mais_votada.innerHTML = `${maisVotada}`
+        percentual_musica.innerHTML = `${percent_musica.toFixed(1)}% dos votos`
 
         
 
