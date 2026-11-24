@@ -39,17 +39,7 @@
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./enquete.html">
-                    <h3>enquete lutadores</h3>
-                </a>
-            </div>
 
-            <div class="btn-nav-white">
-                <a href="./enquete2.html">
-                    <h3>enquete músicas</h3>
-                </a>
-            </div>
 
             <div class="btn-nav-white">
                 <a href="lutadores.html">
@@ -63,7 +53,17 @@
                 </a>
             </div>
 
+            <div class="btn-nav-white">
+                <a href="./enquete.html">
+                    <h3>Enquete lutador</h3>
+                </a>
+            </div>
 
+            <div class="btn-nav-white">
+                <a href="./enquete2.html">
+                    <h3>Enquete música</h3>
+                </a>
+            </div>
 
             <div class="btn-nav">
                 <h3>Gráficos</h3>
@@ -218,42 +218,42 @@
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     //function plotarGrafico(resposta, idAquario) {
 
-        //console.log('iniciando plotagem do gráfico...');
+    //console.log('iniciando plotagem do gráfico...');
 
-        /*// Criando estrutura para plotar gráfico - labels
-       let labels = [];
+    /*// Criando estrutura para plotar gráfico - labels
+   let labels = [];
 
-       // Criando estrutura para plotar gráfico - dados
-       let dados = {
-           labels: labels,
-           datasets: [
-               {
-                   label: 'Temperatura',
-                   data: [],
-                   fill: false,
-                   borderColor: 'rgb(199, 52, 52)',
-                   tension: 0.1
-               }]
-       };
+   // Criando estrutura para plotar gráfico - dados
+   let dados = {
+       labels: labels,
+       datasets: [
+           {
+               label: 'Temperatura',
+               data: [],
+               fill: false,
+               borderColor: 'rgb(199, 52, 52)',
+               tension: 0.1
+           }]
+   };
 
-       console.log('----------------------------------------------')
-       console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-       console.log(resposta)
+   console.log('----------------------------------------------')
+   console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+   console.log(resposta)
 
-       // Inserindo valores recebidos em estrutura para plotar o gráfico
-       for (i = 0; i < resposta.length; i++) {
-           var registro = resposta[i];
-           labels.push(registro.momento_grafico);
-           dados.datasets[0].data.push(registro.temperatura);
-       }
+   // Inserindo valores recebidos em estrutura para plotar o gráfico
+   for (i = 0; i < resposta.length; i++) {
+       var registro = resposta[i];
+       labels.push(registro.momento_grafico);
+       dados.datasets[0].data.push(registro.temperatura);
+   }
 
-       console.log('----------------------------------------------')
-       console.log('O gráfico será plotado com os respectivos valores:')
-       console.log('Labels:')
-       console.log(labels)
-       console.log('Dados:')
-       console.log(dados.datasets)
-       console.log('----------------------------------------------') */
+   console.log('----------------------------------------------')
+   console.log('O gráfico será plotado com os respectivos valores:')
+   console.log('Labels:')
+   console.log(labels)
+   console.log('Dados:')
+   console.log(dados.datasets)
+   console.log('----------------------------------------------') */
 
     //}
 
@@ -363,7 +363,7 @@
         let total_votos_musica = 0;
 
         for (let i = 0; i < votosMusicas.votos.length; i++) {
-            if(votosMusicas.votos[i] > maiorVoto_musica){
+            if (votosMusicas.votos[i] > maiorVoto_musica) {
                 maiorVoto_musica = votosMusicas.votos[i]
                 maisVotada = votosMusicas.musicas[i]
             }
@@ -374,7 +374,7 @@
         mais_votada.innerHTML = `${maisVotada}`
         percentual_musica.innerHTML = `${percent_musica.toFixed(1)}% dos votos`
 
-        
+
 
         // Adicionando gráfico criado em div na tela
         const votos_maior_historia = new Chart(
