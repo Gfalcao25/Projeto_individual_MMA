@@ -87,18 +87,20 @@
             <div id="container-kpis">
 
                 <div id="kpi1">
-                    <h3 id="mais_votado"></h3>
-                    <p id="percent_lutador"></p>
+                    <h1>Lutador Mais Votado</h1>
+                    <h3 style="width: 300px; font-size: 30px;" id="mais_votado"></h3>
+                    <p style="font-size: 20px;" id="percent_lutador"></p>
                 </div>
 
                 <div id="kpi2">
-                    <h3 id="mais_votada"></h3>
-                    <p id="percentual_musica"></p>
+                    <h1>Musica mais Votada</h1>
+                    <h3 style="width: 300px; font-size: 30px;" id="mais_votada"></h3>
+                    <p style="font-size: 20px;" id="percentual_musica"></p>
                 </div>
 
                 <div id="kpi3">
-                    <h3>Total de votos</h3>
-                    <p id="total_votos"></p>
+                    <h1>Total de votos</h1>
+                    <p style=" font-size: 30px;" id="total_votos"></p>
                 </div>
 
             </div>
@@ -381,7 +383,7 @@
         const votos_maior_historia = new Chart(
             document.getElementById("votos_maior_historia"),
             {
-                type: 'doughnut',
+                type: 'bar',
                 data: {
                     labels: votosLutadores.lutadores,
                     datasets: [{
@@ -389,11 +391,7 @@
                         data: votosLutadores.votos,
                         backgroundColor: [
                             "#c90024",
-                            "#ffffff",
-                            "#777777",
-                            "#8b0000",
-                            "#444444",
-                            "#d93636"
+                            
                         ]
                     }]
                 }
